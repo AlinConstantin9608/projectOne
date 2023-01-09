@@ -1,0 +1,132 @@
+
+@import "reset.css";
+@import "meniu.css";
+:root {
+
+	--color: /*#003eb3*/#4115ab;
+	--redcolor: #eb0a1d;
+	--font: 'Roboto',arial;
+	--backcolor: #e3e3e6;
+	--albastru: /*#005eb6*/ #1534AB;
+	--bs: 2px 2px 8px grey;
+	--whitecolor: white;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	
+	
+	
+	:root {
+		
+		--color: #242526;
+		
+	}
+	
+	
+}
+
+
+body {
+	
+	background:#EFF4F4	repeat-x;                             /* fundal */
+	color: #666666;
+	font-family: var(--font);
+	font-size: 12px;
+}
+
+a {
+	
+	color: white;
+	text-decoration: none;
+}
+
+
+h1 {
+	letter-spacing: -2px;
+	font-size: 2.2em;
+}
+
+h2 {
+	letter-spacing: -1px;
+	font-size: 2em;
+	border-bottom: 2px dotted var(--color);	
+}
+
+
+
+h4{
+	text-decoration: none;
+	font-size:1.7em;
+	font-family:candara;
+	color: blue;
+	margin-top: 30px;
+	
+}	
+
+
+
+
+.text {
+
+	font-family:candara , calibri;
+	font-size:1.4em;
+	color:black;
+
+}
+
+
+
+/* Page */
+
+#page {
+	width: 900px ;
+	margin: 0 auto;
+	background:white;
+	
+}
+
+@media screen and (max-width: 480px) {
+	
+	
+	#page {
+		
+		margin: 0;
+		width: auto;
+	}
+	
+	
+}
+
+
+/* Content */
+
+#content {
+	
+	
+	width: auto;
+	height: auto;
+	margin-left: 5px;
+	background: white no-repeat ;
+	
+	
+}
+
+
+
+#content ol, ul {
+	margin: 0px 0px 0px 0px;
+	padding: 10px;
+	
+}
+
+
+#legal {
+	
+	width: 100%;
+	padding: 5px;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 14px;
+	
+}
+

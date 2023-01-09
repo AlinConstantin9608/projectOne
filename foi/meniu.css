@@ -1,0 +1,446 @@
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////// css meniu stanga */
+/*
+#005eb6 - albastru deschis;  #1534AB  - albastru inchis; #003eb3  - albastru deschis; #4115ab - albastru spre mov; #171717 -negru usor deschis;
+#00b52d - verde;  #a62828 - rosu inchis;
+*/
+
+:root {
+	
+	--color: /*#003eb3*/#4115ab;
+	--redcolor: #eb0a1d;
+	--font: 'Roboto',arial;
+	--backcolor: #e3e3e6;
+	--albastru: /*#005eb6*/ #1534AB;
+	--bs: 2px 2px 8px grey;
+	--colorWhite: white;
+	--orange: #fa7b05;
+}
+
+
+
+a {
+	
+	color: var(--colorWhite);
+	text-decoration: none;
+}
+
+
+a:hover {
+	
+	text-decoration: underline;
+	
+}
+
+
+
+
+
+.meniu {			
+
+	height: 100vh;
+	width: 0;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #fa7a02;
+	overflow-y: auto;
+	transition: 0.3s;
+	visibility: hidden;
+	opacity: 0.99;
+	box-shadow: 3px 3px 10px grey;
+	border-top-right-radius: 1%;
+	
+}
+
+
+.meniu a {
+
+	padding: 3px;
+	text-decoration: none;
+	font-size: 17px;
+	display: block;
+	font-family: var(--font);
+	color: var(--albastru);
+}
+
+#menuTop {							/*///////////////////////////////////////////////////////////// Poza cont si link de conectare */
+
+	position: absolute;
+	top: 30px;
+	left: 0;
+	height: auto;
+	width: 100%;
+	padding: 25px;
+	background-color: var(--colorWhite);
+	text-align: center;
+}
+
+ 
+  .formInfo {
+
+	margin-top: 40px;
+	padding: 25px;
+	color: var(--colorWhite);
+	font-family: var(--font);
+	background-color: var(--colorWhite);
+	color: var(--albastru);
+	font-size: 20px;
+	text-align: center;
+}
+ 
+ 
+ #profileImg {
+	 
+	 background-image: url("../imagini/cont.png");
+	background-size: cover;
+	height: 80px;
+	width: 80px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+ }
+ 
+@media screen and (max-width: 840px) {
+	
+	#menuTop {
+		
+		height: 150px;
+	}
+	
+	#profileImg {
+		
+		height: 80px;
+		width: 75px;
+	}
+	
+}
+
+
+
+ .menu-box {
+
+	display: flex;
+	width: auto;
+	height: auto;
+	margin-top: 250px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color:var(--colorWhite);
+}
+
+@media screen and (max-width: 840px) {
+	
+	.menu-box {
+		
+		margin-top: 200px;
+		
+	}
+	
+}
+
+
+ .menu-box ul {
+
+	font-size: 18px;
+	color: var(--albastru);
+	width: 90%;
+	text-align: center;
+	border-top: 1px dotted var(--colorWhite);
+	border-bottom: 1px dotted  var(--colorWhite);
+ }
+ 
+  .menu-box p {
+	  
+	  text-align: left;
+	  color: grey;
+	  font-family: var(--font);
+	  font-size: 14px;
+	  padding: 5px;
+  }
+ 
+.menu-box li {
+
+	padding: 10px 10px 20px 10px;
+	font-family: var(--font);
+	border-bottom: 1px dotted grey;
+}
+
+
+.menu-box li a:hover {
+
+	color: black;
+}
+.menu-box li:hover {
+
+	color: var(--colorWhite);
+	border-radius: 3%;
+	transition: 0.2s;
+	cursor: pointer;
+	background-color: #fa7a02;
+}
+
+
+
+#logare {			
+
+	display: none;
+	background-color: #fa7a02;
+	margin-top: 10px;
+}
+
+
+#logare-of {
+
+	float: right;
+	margin-top: 3px;
+	font-size: 20px;
+	font-family: var(--font);
+	color: var(--albastru);
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.logform {
+	
+	display: flex;
+	flex-direction: column;
+	background-color: var(--colorWhite);
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+	padding: 30px;
+	
+}
+ 
+
+
+.logform input {
+
+	padding: 8px;
+	width: 90%;
+	margin: 5px 0  15px 0 ;
+	font-family: var(--font);
+	border: none;
+	background-color: #0f6f8a;
+	color: var(--colorWhite);
+}
+
+@media screen and (max-width: 840px) {
+	
+	.logform input {
+		
+		width: 70%;
+		
+	}
+	
+}
+
+.logform label {
+
+	text-align:center;
+	padding: 10px;
+	color: var(--albastru);
+	font-family: var(--font);
+	
+}
+
+#conectare {
+	
+	width: 88px;
+	float: right;
+}
+
+
+#parola_view {
+	
+	background-color: transparent;
+	color: var(--albastru);
+	font-size: 15px;
+	z-index:2;
+	padding: 5px;
+	border-top:1px dotted var(--colorWhite); 
+	border-bottom: 1px dotted var(--colorWhite);
+	border-left: 0;
+	border-right: 0;
+	margin-top: 5px;
+}
+
+
+#parola_view:hover {
+
+	border-top:1px solid var(--colorWhite); 
+	border-bottom: 1px solid var(--colorWhite);
+	cursor: pointer;
+}
+
+
+#parolaViewtwo {
+	
+	background-color: transparent;
+	color: var(--albastru);
+	font-size: 15px;
+	z-index:2;
+	padding: 5px;
+	border-top:1px dotted var(--colorWhite); 
+	border-bottom: 1px dotted var(--colorWhite);
+	border-left: 0;
+	border-right: 0;
+	margin-top: 5px;
+}
+
+
+#parolaViewtwo:hover {
+
+	border-top:1px solid var(--colorWhite); 
+	border-bottom: 1px solid var(--colorWhite);
+	cursor: pointer;
+}
+
+
+#menuHelp {
+	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	font-size: 25px;
+	padding: 5px;	
+}
+
+
+
+
+
+#deconectare {
+	
+	margin: 40px 0 5px 15px;
+	display:none;
+	position: absolute;
+	bottom: 0;
+	
+}
+
+
+/*************** cos ***********/
+
+
+#cart {
+	
+	display: none;
+	background-color: transparent;
+}
+
+
+#shopCart {
+	margin-top: 80px;
+	font-size: 17px;
+	font-family: var(--font);
+	padding: 5px;
+	width: auto;
+	height: auto;
+	background-color: var(--colorWhite);
+}
+
+#cart li {
+	
+	width: auto;
+	color: var(--albastru);
+	padding: 10px;
+	margin-top: 15px;
+	box-shadow: 3px 5px 3px grey;
+	text-align: center;
+}
+
+
+/*************** parere ***********/
+
+#parere {
+	
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 30px;
+	background-color: var(--color);
+	color: var(--colorWhite);
+	z-index: 2;
+	font-family: var(--font);
+	border-radius: 3%;
+	box-shadow: 3px 3px 3px 3px grey;
+	text-align: center;
+	
+}
+
+#parere h1 {
+	
+	padding: 10px;
+	
+}
+
+#parere_close {
+	
+	background-color: transparent;
+	position: absolute;
+	right: 5px;
+	top: 0;
+	border: none;
+	color: var(--colorWhite);
+	font-size: 18px;
+	
+}
+
+#parere_close:hover {
+	
+	cursor: pointer;
+	
+}
+
+#parere input {
+	
+	margin-top: 10px;
+	font-family: var(--font);
+	color: var(--colorWhite);
+	border: none;
+	margin-top: 5px;
+	
+}
+
+#parere input:hover {
+	
+	 color: black;
+	 background-color: var(--colorWhite);
+	 cursor: pointer;
+	
+}
+
+#menuClose {   
+/* buton de inchidere */
+
+	display: inline;
+	position: absolute;
+	right: 0;
+	top: -5px;
+	padding: 5px;
+	font-size: 20px;
+	font-family: var(--font);
+	color:  var(--colorWhite);
+	background-color: transparent;
+	border: 1px var(--colorWhite);
+	cursor: pointer;
+	z-index: 1;
+	transition: 1s;
+	text-decoration: none;
+}
+
+
+#menuClose:hover {
+	
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	
+}
+
+

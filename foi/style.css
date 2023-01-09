@@ -1,0 +1,712 @@
+
+@import "reset.css";  /* cod de reset */
+
+@import "meniu.css";
+
+@import "css2.css"; /* roboto regular 400 */
+
+
+* {
+  box-sizing: border-box;
+	
+}
+/*
+#005eb6 - albastru deschis;  #1534AB  - albastru inchis; #003eb3  - albastru deschis; #4115ab - albastru spre mov; #171717 -negru usor deschis;
+#00b52d - verde; #fa7a02 - portocaliu;
+*/
+:root {
+																					
+																				
+	--color: #171717;                                          
+	--redcolor: #eb0a1d;
+	--font: 'Roboto',arial;                         
+	--backcolor: #e3e3e6;
+	--albastru:  #1534AB;                                                           
+	--colorWhite: white;
+	--orange: #fa7b05;
+	--colorText: black;                                                                              
+}
+
+
+
+
+@media screen and (prefers-color-scheme: dark) {
+	
+	:root { --color: #242526;}
+}
+
+noscript {
+	
+	background-color: black;
+	padding: 10px;
+	font-size: 20px;
+	color: var(--colorText);
+}
+
+#balon {        /* balon de notificare */
+	
+	display: none;
+	position: fixed;
+	width: auto;
+	top: 10px;
+	right: 1%;
+	padding: 15px;
+	background-color: var(--orange);
+	color: var(--colorText);
+	z-index: 2;
+	font-family: var(--font);
+	border-radius: 3%;
+	box-shadow: 3px 3px 3px 3px var(--colorWhite);
+	text-align: center;
+	animation: balon;
+	animation-duration: 4s;
+}
+
+@Keyframes balon {
+	
+	0% {opacity: 0; }
+	
+	25% {opacity: 1; }
+	
+	50% {opacity: 1; }
+	
+	100% {opacity: 0;}
+	
+}
+
+
+#toTop {
+	
+	position: fixed;
+	right: 0;
+	bottom: 22px;
+	right: 10px;
+	z-index: 99;
+	display: none;
+	padding: 8px;
+	border: none;
+	color: white;
+	background-color: #cf6808;
+	cursor: pointer;
+	font-family: var(--font);
+	
+}
+
+#balon:before {
+	
+	font-family:"FontAwesome";
+	content: '\f06a';
+	color: var(--colorWhite);
+	font-size: 19px;
+	padding: 10px;
+	
+}
+
+#usermsg {
+	
+	font-style: italic;
+	text-decoration: underline;
+	
+}
+
+
+body {
+
+	background: var(--backcolor);
+    letter-spacing: 0.02em;
+	counter-reset: produs;
+	
+}
+
+.centrat {
+	
+    max-width: 1300px;
+    height: auto;
+    padding: 4px;
+    margin: 0 auto;
+}
+												/* centrare site */
+@media screen and (max-width:480px) {
+    .centrat {
+        width: 97%;
+    }
+	
+
+	
+}
+
+/*/////////////////////////link-uri//////////////////////*/
+a {
+
+	color: white;
+    text-decoration: none;
+}
+
+
+/*///////////////////////////////////butoane///////////////////////*/
+.buton {									
+
+	font: 17px var(--font);
+	background-color: var(--orange);
+	color:var(--colorText);
+	border: none;
+	cursor: pointer;
+	padding: 2px;
+}
+.buton:hover {
+
+	box-shadow: 2px 2px 8px grey;
+	
+}
+
+									
+/*/////////////////////////////header-ul cu logo & cautare/////////////////////////*/
+header {
+
+	width: 100%;
+	height: 100px;
+	background-color:var(--colorWhite);
+	display: flex;
+	padding-bottom: 10px;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+@media screen and (max-width:840px) {
+
+	header {
+
+		flex-direction: column;
+		width: 100%;
+		align-items: left;
+		height: auto;
+		padding: 15px;
+		margin-left: 0;
+		
+	}
+}
+
+header>div:nth-child(2) {
+
+	margin-left: auto;
+	margin-top: 15px;
+}
+
+
+/*////////////////logo site/////////*/
+#logo {										
+
+	margin: 15px 0 0 15px;
+	border-radius: 3%;
+	height: 63px;
+	width: 230px;
+	outline-offset: 5px;
+	line-height: 1.6;
+	box-shadow: 3px 3px 3px grey;
+	/*background-image: linear-gradient(to right, red , yellow , blue); ... 1 decembrie*/
+	background-color: var(--orange);
+}
+#logo p {
+
+	text-align: center;
+	font-family: var(--font);
+	color:var(--colorWhite);
+	/*color: var(--colorWhite); pentru 1 decembrie*/
+	font-size: 20px;
+}
+#logo >p:nth-child(2) {
+
+	font-size: 10px;
+}
+
+
+/*//////////////////////////////meniu de sus///////////////////////*/
+#siteMenu {
+	
+	position: relative;
+	top: 0;
+	right: 10%;
+	color: var(--colorText);
+	font-family: var(--font);
+	font-size: 18px;
+	
+}
+
+
+#siteMenu li:first-child {
+	
+	padding: 5px;
+
+}
+
+#siteMenu li {
+	
+	transition: 1s;
+	text-decoration: none;
+}
+
+#siteMenu li:hover {
+	
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: transparent;
+}
+
+#siteMenu ul {
+	
+	margin-top: 20px;
+}
+
+
+@media screen and (max-width:840px) {
+
+
+#siteMenu {
+	
+	position: absolute; 
+	right: 2%;
+	top: 0;
+	
+}
+
+}
+
+
+
+#siteMenu  li {
+	
+	display: inline;
+	margin-right: 10px;
+	text-decoration: none;
+	transition: text-decoration 1s;
+}
+
+
+
+/*////////////////////////////////////cautare///////////////*/
+
+#tips {
+	
+	
+	color: var(--colorText);
+	font: 20px var(--font);
+	font-family: var(--font);
+}
+
+
+#search-box {							
+
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: 5px;
+	padding: 30px;
+	background-color: var(--orange);
+	text-align: center;
+}
+
+
+ #searchBar{
+
+	width: 55%;
+	padding: 22px;
+	margin-top: 5px;
+	font-family: var(--font);
+	background-color:var(--colorWhite);
+	color: var(--colorWhite);
+	outline: none;  /* pentru bara aia de apare cand dai click pe ea */
+	border: none;
+	transition: width 0.6s ease-in-out;
+}
+
+#searchBar[placeholder] {
+
+	color: var(--colorText);
+	font-size: 15px;
+}
+
+#searchBar:focus {
+
+	border: 1px solid var(--color);
+}
+
+
+@media screen and (max-width:840px) {
+
+
+	#search-box {
+
+		margin: 10px 20px 5px 0;
+	}
+
+	#searchBar {
+
+		width: 80%;
+	}
+
+	#searchBar:focus {
+		
+		border: 1px solid var(--color);
+		
+	}
+	
+	#searchBtn {
+		
+		margin-left:0;
+	}
+	
+}
+
+#searchBtn {
+
+	padding: 22px;
+	background-color:var(--colorWhite);
+	color: var(--colorText);
+	border: none;
+	letter-spacing: 2px;
+	font-family: var(--font);
+	outline: none;
+	box-shadow: none;
+	margin-left: 2px;
+
+}
+#searchBtn:hover {
+
+	color: orange;
+	cursor: pointer;
+	box-shadow: 1px 1px 3px var(--color);
+
+}
+#searchBtn:active {
+
+	padding: 16px;
+
+}
+
+
+
+/*/////////////////////////////////////////continut////////////////////////////*/															
+.articole {
+
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+	display: flex;
+	flex-flow: row wrap;
+	background: transparent;
+}
+
+ .artTitle {
+	
+	width: 100%;
+	padding: 15px;
+	font-family: var(--font);
+	font-size: 18px;
+	color: #4f4f4f;
+}
+
+/*/////////////////////////////////////produse/////////////////////////////*/
+.produse {						
+
+	height: 420px;
+	width: auto;
+	background-color:var(--colorWhite);
+	margin: 17px 5px 10px 5px;
+	flex: 5px;
+	position: relative;
+	font-family: var(--font);
+	color: var(--colorText);
+	text-align: center;
+	border-radius: 5%;
+	animation: play;
+	animation-duration: 1s;
+	cursor: pointer;
+	
+}
+
+
+.produse a {
+	
+	color: var(--albastru);
+	
+}
+
+.produse a:hover {
+	
+	color: var(--orange);
+}
+
+@keyframes play {
+	
+	0% {opacity: 0;}
+	
+	25% {opacity: 0.2;}
+	
+	50% {opacity: 0.5;}
+	
+	75% {opacity: 0.7;}
+		
+	100% {opacity: 0.9;}	
+}
+
+
+.produse:hover {
+
+	box-shadow: 3px 3px 10px grey;
+	margin-top: 15px;
+	border: none;
+}
+
+.buy{
+
+	position: absolute;
+	left: 25%;
+	bottom: 10%;
+	border: none;
+	padding: 3px;
+	color: var(--albastru);
+	font: 16px var(--font);
+	background-color: transparent;
+	cursor: pointer;
+
+}
+.buy:before {
+
+	font-family: "FontAwesome";
+	content: "\f217";
+
+}
+
+.buy:hover {
+	
+	text-decoration: underline;
+	
+}
+
+
+.titlu-produs{
+
+	background-color: transparent;
+	font: 17px var(--font);
+	position: relative;
+	top: 5px;
+	text-align: center;
+	
+}
+
+.titlu-produs::before {
+	
+	counter-increment: produs;
+	content:" "counter(produs)" - ";
+	
+}
+
+img {
+	
+	width: 260px;
+	height: 220px;
+}
+
+.img-produse {								/*imagine produs */
+
+	width: 260px;
+	height: 220px;
+	justify-content: center;
+	position: relative;
+	top: 9%;
+	
+}
+.img-produse:hover {
+	
+	transform: scaleX(-1);
+	
+}
+
+/*//////////////////////////////////pret/////////////*/
+.pret{										
+
+	position: absolute;
+	bottom: 20%;
+	left: 35%;
+	display: inline;
+	font: 22px var(--font);
+}
+
+.rest {
+	
+	color: #eb0a1d;
+	font-size: 12px; 
+	vertical-align:top;
+} 
+
+									
+/*////////////////////////////////////////footer////////////////*/										
+.footer {
+
+	display: flex;
+	flex-direction: column;
+    width: 100%;
+    height: 80px;
+	background-color: var(--orange);
+	padding-top: 10px;
+	margin-top: 20px;
+	border-radius: 1%;
+	z-index: 1;
+}
+@media screen and (max-width: 840px) {
+
+	.footer {
+
+		flex-direction: row;
+		height: 180px;
+	}
+	.footer-links li {
+
+		padding-bottom: 10px;
+	}
+	.footer >div:nth-child(2) {
+		padding-top: 30px;
+	}
+	.footer-links >div:nth-child(2) {
+
+		position: absolute;
+		right: 30px;
+	}
+}
+
+
+							/* Lista de link din footer */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.footer-links {
+
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+    height: 40px;
+    background-color:unset;
+    color: white;
+}
+.footer-links >div:nth-child(2) {
+
+	margin-left: auto;
+	margin-right: 10px;
+}
+
+#footer-social button {
+
+	border: none;
+	background-color: transparent;
+	font-size: 16px;
+	color: var(--colorWhite);
+	cursor: pointer;
+
+}
+.footer-links ul {
+
+	margin-left: 20px;
+	
+}
+.footer-links li {
+
+	display: inline-block;
+	margin-top: 2px;
+	padding-left: 5px;
+	font: 15px var(--font);
+	text-decoration: none;
+	transition: text-decoration 1s;
+
+}
+.footer-links li:hover {
+
+	text-decoration: underline;
+	text-decoration-color: transparent;
+
+}
+
+.footer-copy {
+
+	width: 100%;
+	display: block;
+	height: 40px;
+	border-top: 3px solid var(--colorWhite);
+}
+@media screen and (max-width: 840px) {
+
+	.footer-copy {
+
+		border-top: 0px;
+	}
+
+}
+.footer-copy p {
+	float: right;
+	margin-top: 20px;
+	margin-right: 3px;
+	color: white;
+    font: 14px var(--font);
+}																		
+
+/*///////////////////////////////mod de noapte////////////////*/
+
+.negru{
+
+	background-color: #242526;
+	color: var(--colorText);
+	border: none;
+
+}
+.negru[placeholder] {
+
+	color: var(--colorWhite);
+
+}
+
+@media (prefers-color-scheme: dark) {
+	
+	.negru{
+
+	background-color: #242526;
+	color: var(--colorWhite);
+	border: none;
+
+}
+.negru[placeholder] {
+
+	color:var(--colorWhite);
+
+}
+	
+}
+
+
+ .body-night { 
+
+	background-color: #18191a;
+}
+
+
+/* ELEMENTELE DE SUBSOL */
+
+#ceas {
+
+	float: left;
+	margin: 15px 0 0 10px;
+	font: 14px var(--font);
+	color:white;
+}
+
+#ziua {
+
+	float: left;
+	margin: 15px 0 0 10px;
+	font: 14px var(--font);
+	color: white;
+}
+
+  #marca {
+
+    color: white;
+    font: 14px var(--font);
+	margin-right: 10px;
+}

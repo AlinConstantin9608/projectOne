@@ -1,0 +1,112 @@
+															/* continut */
+.preparate {
+
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+	display: none;
+	flex-flow: row wrap;
+	background: transparent;
+}
+
+.produse {						/* Produse */
+
+	width: 25%;
+	height: 400px;
+	background-color: white;
+	margin: 20px 5px 10px 5px;
+	flex: 300px;
+	position: relative;
+	font-family: var(--font);
+	color: var(--color);
+	text-align: center;
+}
+
+.produse:hover {
+
+	box-shadow: 3px 3px 10px grey;
+	margin-top: 15px;
+}
+
+
+
+.distribuitor {
+
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	transition-property: visibility;
+	border: none;
+	color: var(--color);
+	background: none;
+	font: 15px var(--font);
+
+}
+
+.distribuitor:hover {
+
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.buton-info{
+
+	position: absolute;
+	right: 30%;
+	bottom: 15%;
+	transition-property: visibility;
+	border: none;
+	border-bottom: 2px dotted var(--color);
+	padding: 3px;
+	color: var(--color);
+	font: 16px var(--font);
+	background-color: transparent;
+	cursor: pointer;
+
+}
+.buton-info:before {
+
+	font-family: "FontAwesome";
+	content: "\f217";
+
+}
+
+.buton-info:hover {
+	
+	border-bottom: 1px solid var(--color);
+}
+
+.titlu-produs{
+
+	background-color: transparent;
+	font: 17px var(--font);
+	position: relative;
+	top: 5px;
+	text-align: center;
+
+}
+.img-produse {								/*imagine produs */
+
+	width: 220px;
+	height: 180px;
+	justify-content: center;
+	position: relative;
+	top: 15%;
+	
+}
+
+.pret{										/*pret*/
+
+	position: absolute;
+	bottom: 25%;
+	left: 35%;
+	display: inline;
+	font: 18px var(--font);
+}
+
+.rest {
+	
+	color: #eb0a1d;
+	font-size: 12px; 
+	vertical-align:top;
+} 

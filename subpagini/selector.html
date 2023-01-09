@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head> 
+
+<title> Alte proiecte </title>
+<meta charset="UTF-8">
+<style>
+
+body {
+
+background-color: black;
+color:white;
+
+}
+
+h1 {
+
+	font-size:30px;
+	color:white;
+	font-family:sans-serif;
+}
+
+span{
+
+	position:absolute;
+	bottom:5px;
+	right:15px;
+}
+
+a {
+
+text-decoration:none;
+color:white;
+}
+
+a:hover {
+
+text-decoration:underline;
+}
+li {
+
+margin-top:10px;
+}
+
+</style>
+
+<body>
+<h1> Suntem si pe aici...</h1>
+
+<a href="../Demontari web/vechi.html" target="_blank" ><li>Advenced!</li></a>
+
+<a href="../Demontari web/homepageindex.html" target="_blank"><li>The Market Project</li></a>
+
+<a href="../index.html" target="_blank"><li style="color:green;">Inapoi</li></a>
+
+<span id="marca"></span>
+
+<script>
+var d = new Date();
+
+var months = [ "Ianuarie" , "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August" ,"Septembrie"  ,"Octombrie" , "Noiembrie" , "Decembrie"];
+
+document.getElementById("marca").innerHTML = "&copy;" + " " + months[d.getMonth()] + "  " +   d.getFullYear()  ;
+
+</script>
+</body>
+
+</html>

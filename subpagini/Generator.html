@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+
+
+<head>
+
+<meta name="author" content="Barbulescu Alin Constantin">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Scrie  </title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <meta http-equiv="refresh" content="">
+
+<style>
+
+
+#app {
+
+	position:fixed;
+	top:50%;
+	padding:30px;
+	font-size:23px;
+	border:none;
+	background:black;
+	color:white;
+
+}
+</style>
+
+
+
+
+
+</head>
+
+
+<body onload="getColor()">
+
+
+<button id="app" onclick = "getColor()"> Apasa pentru o culoare </button>
+
+<input type="color" id="color" name="color">
+<input type="button" onclick="setColor()" value="Culoarea mea">
+
+
+
+<div  id="text" style="text-align:center; font-size:20px; color:white; background-color:black;" > 
+
+
+ </div>
+
+<script>
+
+
+
+function getColor() {
+	
+	
+	var symbols,color;
+	
+	symbols = "0123456789ABCDEF";
+
+	color = "#";
+
+	var x = document.getElementById("color");
+	
+	for( var i=0; i<6; i++) {
+		
+		color = color + symbols[Math.floor(Math.random() * 16)];
+
+	document.body.style.background = color;
+
+	document.getElementById('text').innerHTML = "COD CULOARE " + " " + color;	
+}
+	
+
+	
+}
+
+
+function setColor() {
+
+	var x = document.getElementById("color").value;
+	
+	document.body.style.background = x;
+
+	document.getElementById('text').innerHTML = "COD CULOARE " + " " + x;
+}
+
+
+
+
+</script>
+
+
+</body>
+
+
+</html>

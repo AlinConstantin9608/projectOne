@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ro-RO">
+
+<!--  DOC DETAILS  Create HTML: 14.01.2020 18:30 ^ Create CSS : 14.01.2020 18:29 ^ Create javaScript :27.03.2020 20:11;
+   Version Now: 3.0 - 2022;	
+-->
+
+ <head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tu si peste 1.000.000 de deserturi">
+<meta name="keywords" content="Cofetarie,Web,On-line,Dulciuri,Zahar">
+<meta name="theme-color" content="#4115ab">
+<link rel="stylesheet" href="../testare/foi/all.min.css">
+<title>e-Drops România</title>
+<link rel="icon" href="imagini/e.drops2.jpg" type="image/gif" sizes="16x14"> 
+<link href="../testare/foi/style.css" rel="stylesheet" type="text/css">
+<meta name="author" content="Bărbulescu Alin-Constantin">
+<meta http-equiv="Cache-control" content="no-cache">
+</head>
+
+<body onload="dar()">
+
+<button id="toTop" onclick="goTop()">Up!</button>
+
+<div id="balon"><p>Bun venit </p> <p id="usermsg"></p>  
+</div>
+
+<noscript>JavaScript dezactivat sau browser vechi. :(</noscript>
+   
+   
+<header> 
+
+<div id="logo" title="e-Drops România">
+
+<p> e-Drops</p>
+<p> * 1.000.000 de deserturi!</p>
+</div>
+
+<div id="siteMenu">
+
+<ul id="siteOption">
+<li  onclick="meniu_on()"><i class="fa fa-bars"></i> Meniu</li>
+<li onclick="cartOn()"><i class="fa fa-shopping-cart" style="font-size:15px; margin-right:4px;"></i>Coș</li>
+</ul>
+</div>
+
+</header> 
+<div class="centrat">  
+
+                                                                         
+<div  id="search-box"> 
+<p id="tips">Caută în magazin:</p>
+<form method="POST" action="add.php">
+ <input type="text" id="searchBar" name="src"  accesskey="h" placeholder="Caută prajitura preferată..."   title="Scrie aici cuvintele cautate..." />
+ <button type="submit" onclick="search()" id="searchBtn"  title="Caută!" ><i class="fa fa-search"></i></button>
+</form>
+
+
+</div>
+													
+
+<div  class="meniu">
+
+<div id="menuTop">
+<div id="menuTopCover">
+<img id="profileImg">
+
+<a href="#" id="hello"></a> <!-- aici apare numele utilizatorului -->
+<button id="acces"  class="buton" onclick="log()"><i class="fa fa-sign-in" aria-hidden="true"></i> Conectare</button>
+</div>
+
+<button name="deconectare" class="buton" id="deconectare" onclick="deconectare(),log()">deconect.</button>
+</div>
+
+<div class="menu-box">
+
+<ul>
+	
+	<a href="index.php" title="înapoi"><li>Acasă</li></a>
+	<li title="Vezi lista completă de deserturi">Deserturi</li>
+	<li  title="Lista comletă a cofetăriilor partenere">Cofetării</li>
+	<li title="">Contact</li>
+	<li onclick="cartOn()"><i class="fa fa-shopping-cart" style="font-size:15px; margin-right:4px;"></i>Coșul Meu</li>
+	<p>Mai multe</p>
+	<li  onclick="nightShift(),meniu_off()"><i class="fa fa-paint-brush"></i> Schimbă tema</li>
+	<li onclick="opinion()" title="Spune-ne părerea ta!">Feedback</li>
+</ul>
+
+
+<!------------------ buton inchis meniu -------------------------->
+<button id="menuClose" title="Închide" onclick="meniu_off()"><i class="fa fa-times" aria-hidden="true"></i>Închide</button>
+</div>
+
+
+<div id="logare"> 
+
+
+<div class="formInfo"> Intră în cont</div>
+
+<form class="logform" action="form.php" method="POST">
+<!-- formular de log-in -->
+<label for="username"><i class="fa fa-user" aria-hidden="true"></i> Numele Dvs.
+<input type="text" name="username" id="username" required>
+</label>	
+
+
+<label for="parola"><i class="fa fa-lock" aria-hidden="true"></i> Parola <br>
+<input  type="password" name="parola" id="parola">
+<br>
+<i class="fa fa-low-vision" aria-hidden="true"></i><button id="parola_view" onclick="showPass()" type="button" title="Arată/ascunde parola"> Arată/ascunde parola</button>
+</label>
+
+<input id="conectare" class="buton" value="Conectare" onclick="userEnter(),logOf()" type="submit">
+</form>
+ 		
+
+<div class="formInfo">...Sau creeați un cont nou</div>
+
+<form class="logform"   action="form2.php" method="POST">
+
+<!-- formular de inscriere -->
+
+<label for="username"><i class="fa fa-user" aria-hidden="true"></i> Numele Dvs.
+<input type="text" name="username" id="username" required>
+</label>	
+
+
+<label for="parola"><i class="fa fa-lock" aria-hidden="true"></i> Parola <br>
+<input  type="password" name="parola" id="parolaTwo">
+<br>
+<i class="fa fa-low-vision" aria-hidden="true"></i><button id="parolaViewtwo" onclick="showPasstwo()" type="button" title="Arată/ascunde parola"> Arată/ascunde parola</button>
+</label>
+
+<label for="email" ><i class="fa fa-envelope-o" aria-hidden="true"></i> E-mail
+<br> 		
+		<input type="email" id="email"  name="email" >
+</label>
+
+
+ <input id="conectare" value="Înscriere" class="buton" onclick="finalizare(),logOf()" value="submit">
+
+
+</form>
+
+<button class="buton" id="menuHelp"><i class="fa fa-question-circle-o"></i> </button>
+
+<button id="menuClose" title="Închide" onclick="logOf(),meniu_on()"><i class="fa fa-arrow-left" aria-hidden="true"></i>Înapoi</button>
+
+<!-- butonul de inchidere este acelasi dar este alta functie (logof in loc de menu_off) -->
+</div>
+    
+
+
+	
+<!-- cos produse -->		
+<div id="cart">
+
+<div class="formInfo"><i class="fa fa-shopping-cart" style="font-size:15px; margin-right:4px;"></i> Coșul Meu</div>
+
+<ul id="shopCart">
+<li>Produsele selectate apar aici.</li>
+<li>Produsele selectate apar aici.</li>
+</ul>
+<button id="menuClose" title="Închide" onclick="cartOf()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Înapoi</button>
+</div>
+
+</div> <!-- meniu end -->
+
+
+ 
+<div id="parere">
+<form action="" method="POST">
+<h1> Spune-ne părerea ta! </h1>
+ <textarea name="message" rows="10" placeholder="scrie..."  cols="30"></textarea><br>
+<input type="submit" class="buton" value="Trimite">	
+</form>
+<button onclick="opinion()" id="parere_close"><i class="fa fa-close"></i> Închide</button>
+</div>
+                                  
+
+<div class="articole">  
+
+<h1 class="artTitle">Oferta de <span id="artDate"></span>:</h1>
+
+<div  class="produse">
+
+<a href="subpagini/produs.php"><h1 class="titlu-produs"></h1></a> 
+
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art1.jpg" />
+
+<div class="pret"><span class="baza">99,</span><sup class="rest">86</sup>Lei</div>
+<button  class="buy" title="Adaugă in coș"></button>
+
+
+</div>
+
+<div class="produse">
+
+<h1 class="titlu-produs">  </h1>
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art2.jpg"/>
+<div class="pret"><span class="baza">20,</span><sup class="rest">21</sup>Lei</div>
+<button  class="buy" onclick="play()" title="Adaugă in coș"> Cumpără</button>
+
+
+</div>
+
+<div class="produse">
+
+<h1 class="titlu-produs">  </h1>
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art3.jpg"/>
+<div class="pret"><span class="baza">22,</span><sup class="rest">96</sup>Lei</div>
+<button  class="buy" title="Adaugă in coș"> Cumpără</button>
+
+</div>
+
+<div class="produse">
+
+<h1 class="titlu-produs"> </h1>
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art4.jpg"/>
+<div class="pret"><span class="baza">26,</span><sup class="rest">08</sup>Lei</div>
+<button  class="buy" title="Adaugă in coș"> Cumpără</button>
+
+</div>
+ <!------------------------ titlu categorie------------------->
+<h1 class="artTitle">S-ar putea să vă placă și ...</h1>
+
+<div class="produse">
+
+<h1 class="titlu-produs">   </h1>
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art5.jpg"/>
+<div class="pret"><span class="baza">12,</span><sup class="rest">69</sup>Lei</div>
+<button  class="buy" title="Adaugă in coș"> Cumpără</button>
+
+</div>
+
+
+<div class="produse">
+
+<h1 class="titlu-produs">  </h1>
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art6.jpg"/>
+<div class="pret"><span class="baza">3,</span><sup class="rest">9</sup>Lei</div>
+<button  class="buy" title="Adaugă in coș"> Cumpără</button>
+
+</div>
+
+
+<div class="produse">
+
+<h1 class="titlu-produs">  </h1>
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art7.jpg"/>
+<div class="pret"><span class="baza">21,</span><sup class="rest">69</sup>Lei</div>
+<button  class="buy" title="Adaugă in coș"> Cumpără</button>
+
+</div>
+
+
+<div class="produse">
+
+<h1 class="titlu-produs"> </h1>
+<img class="img-produse" alt="Imagine produs" src="../testare/imagini/articole/art3.jpg"/>
+<div class="pret"><span class="baza">22,</span><sup class="rest">08</sup> Lei</div>
+<button  class="buy" title="Adaugă in coș"> Cumpără</button>
+
+</div>
+
+</div> 
+
+
+
+<div id="footer-mobile">
+
+<div class="footer">   
+
+<div class="footer-links">	
+<ul>
+	<li><a href="index.php"><i class="fa fa-home" style="padding-right:4px"></i>Acasă</a></li>
+	<li><i class= "fa fa-list" style="padding-right:4px" ></i>Legal</li>
+	<li>Contact</li>
+	<li><a href="subpagini/selector.html"  target="_blank"><i class="fa fa-clone" style="padding-right:4px"></i>Alte proiecte</a></li>	
+</ul> 
+
+<div id="footer-social">
+
+
+<button  title="Hai pe Facebook!"><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+</button>
+<button title="Vino pe twitter!"><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+</button>
+
+</div>
+	
+</div>
+
+<div class="footer-copy">
+
+<p>	Toate drepturile rezervate &copy; <span id="marca" title="C9"></span>&bull; Toate preţurile conţin 
+<a href= "https://ro.wikipedia.org/wiki/Taxa_pe_valoarea_ad%C4%83ugat%C4%83" target ="_blank" title="Aflati despre T.V.A">T.V.A.</a>
+</p>
+
+
+<div id="ceas"></div>
+
+<div id="ziua"></div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+<!-- centrat - final  -->
+
+
+<script src="script/main.js"> </script>  
+<script  src="script/meniu.js"> </script>
+</body>
+
+</html>
